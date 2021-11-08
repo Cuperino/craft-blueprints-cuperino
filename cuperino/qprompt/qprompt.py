@@ -51,7 +51,7 @@ class Package(CMakePackageBase):
             self.blacklist_file.append(os.path.join(self.packageDir(), 'blacklist_mac.txt'))
 
         self.defines["website"] = "https://qprompt.app/"
-        self.defines["company"] = "Javier O. Cordero Pérez"
+        self.defines["company"] = "Javier O. Cordero Perez"
         self.defines["productname"] = "QPrompt"
         self.defines["appname"] = "qprompt"
         self.defines["license"] = os.path.join(self.sourceDir(), "COPYING")
