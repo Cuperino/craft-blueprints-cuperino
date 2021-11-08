@@ -9,7 +9,7 @@ class subinfo(info.infoclass):
         self.displayName = "QPrompt"
         self.description = "Personal Teleprompter Software"
         self.webpage = "https://qprompt.app"
-        self.svnTargets['main'] = 'git@github.com:Cuperino/QPrompt.git|main'
+        self.svnTargets['main'] = 'https://github.com/Cuperino/QPrompt.git|main'
         self.defaultTarget = "main"
 
     def setDependencies(self):
