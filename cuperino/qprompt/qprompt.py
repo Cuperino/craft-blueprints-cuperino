@@ -7,10 +7,11 @@ class subinfo(info.infoclass):
     def setTargets(self):
         #self.versionInfo.setDefaultValues()
         self.displayName = "QPrompt"
-        self.description = "Personal Teleprompter Software"
+        self.description = "Teleprompter software for all video creators"
         self.webpage = "https://qprompt.app"
-        self.svnTargets['main'] = 'https://github.com/Cuperino/QPrompt.git|main'
-        self.defaultTarget = "main"
+        for ver in ["v1.0", "main"]:
+            self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
+        self.defaultTarget = "v1.0"
 
     def setDependencies(self):
         self.buildDependencies["virtual/base"] = None
@@ -43,7 +44,7 @@ class Package(CMakePackageBase):
             # Add APPLE_IN_APP_BUNDLE flag to enable private DBus, when packing by Craft
             self.subinfo.options.configure.args += " -DAPPLE_IN_APP_BUNDLE=ON"
         elif CraftCore.compiler.isWindows:
-            self.defines["shortcuts"] = [{"name" : "QPrompt", "target":"bin/qprompt.exe", "description" : "Personal Teleprompter Software"}]
+            self.defines["shortcuts"] = [{"name" : "QPrompt", "target":"bin/qprompt.exe", "description" : "Teleprompter software for all video creators"}]
 
     def createPackage(self):
         self.blacklist_file.append(os.path.join(self.packageDir(), "blacklist.txt"))
