@@ -11,7 +11,7 @@ class subinfo(info.infoclass):
         self.webpage = "https://cuperino.com"
         for ver in ["v1.0", "main"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/ClipboardInspector.git|{ver}|"
-        self.defaultTarget = "v1.0"
+        self.defaultTarget = "main"
 
     def setDependencies(self):
         self.buildDependencies["virtual/base"] = None
