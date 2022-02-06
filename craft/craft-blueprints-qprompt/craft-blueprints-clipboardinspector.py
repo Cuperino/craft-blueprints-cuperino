@@ -4,7 +4,7 @@ import info
 class subinfo(info.infoclass):
     def setTargets(self):
         for ver in ["v1.0", "main"]:
-            self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
+            self.svnTargets[ver] = f"[git]https://github.com/Cuperino/ClipboardInspector.git|{ver}|"
         self.defaultTarget = "v1.0"
 
     def setDependencies(self):
