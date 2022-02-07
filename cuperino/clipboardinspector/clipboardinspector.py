@@ -33,7 +33,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
-        self.runtimeDependencies["kde/frameworks/tier1/ksyntaxhighlighting"] = None
+        self.runtimeDependencies["kde/frameworks/tier1/syntax-highlighting"] = None
 
 from Package.CMakePackageBase import *
 
@@ -58,11 +58,10 @@ class Package(CMakePackageBase):
         self.defines["license"] = os.path.join(self.sourceDir(), "COPYING")
         self.defines["executable"] = r"bin/clipboardinspector.exe"
 
-        #self.defines["icon"] = os.path.join(self.sourceDir(), "src", "icons", "icon.svg")
-        self.defines["icon"] = os.path.join(self.packageDir(), ".assets", "apps-com.cuperino.clipboardinspector.svg")
-        #self.defines["icon_png"] = os.path.join(self.packageDir(), ".assets", "150-apps-com.cuperino.clipboardinspector.png")
-        #self.defines["icon_png_44"] = os.path.join(self.packageDir(), ".assets", "44-apps-com.cuperino.clipboardinspector.png")
-        #self.defines["icon_png_310x310"] = os.path.join(self.packageDir(), ".assets", "310-apps-com.cuperino.clipboardinspector.png")
+        self.defines["icon"] = os.path.join(self.sourceDir(), "src", "icons", "icon.svg")
+        self.defines["icon_png"] = os.path.join(self.packageDir(), ".assets", "150-apps-com.cuperino.clipboardinspector.png")
+        self.defines["icon_png_44"] = os.path.join(self.packageDir(), ".assets", "44-apps-com.cuperino.clipboardinspector.png")
+        self.defines["icon_png_310x310"] = os.path.join(self.packageDir(), ".assets", "310-apps-com.cuperino.clipboardinspector.png")
 
         if isinstance(self, AppxPackager):
             self.defines["display_name"] = "Clipboard Inspector"
