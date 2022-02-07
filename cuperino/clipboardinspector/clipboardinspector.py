@@ -29,9 +29,11 @@ class subinfo(info.infoclass):
         else:
             self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
             self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None 
+        self.runtimeDependencies["libs/qt5/qtquickcontrols"] = None
         self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
+        self.runtimeDependencies["kde/frameworks/tier1/ksyntaxhighlighting"] = None
 
 from Package.CMakePackageBase import *
 
