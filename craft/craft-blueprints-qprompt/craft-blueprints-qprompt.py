@@ -3,7 +3,7 @@ import info
 
 class subinfo(info.infoclass):
     def setTargets(self):
-        for ver in ["v1.0", "main"]:
+        for ver in ["v1.0", "ubuntu-18-AppImage", "main"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
         self.defaultTarget = "main"
 

@@ -9,7 +9,7 @@ class subinfo(info.infoclass):
         self.displayName = "QPrompt"
         self.description = "Teleprompter software for all video creators"
         self.webpage = "https://qprompt.app"
-        for ver in ["v1.0", "main"]:
+        for ver in ["v1.0", "ubuntu-18-AppImage", "main"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
         self.defaultTarget = "main"
 
