@@ -21,7 +21,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtx11extras"] = None
         # if CraftCore.compiler.isWindows:
 
-from Package.Qt5CorePackageBase import *
+from Package.CMakePackageBase import *
 
 class Package(CMakePackageBase):
     def __init__(self):
