@@ -16,5 +16,5 @@ class subinfo(info.infoclass):
     def setDependencies(self):
         # self.buildDependencies["virtual/base"] = None
         self.runtimeDependencies["libs/qt5/qtbase"] = None
-        self.runtimeDependencies["libs/qt5/x11extras"] = None
+        self.runtimeDependencies["libs/qt5/qtx11extras"] = None
         # if CraftCore.compiler.isWindows:
