@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # SPDX-License-Identifier: GPL-3.0
 # SPDX-FileCopyrightText: 2022 Javier O. Cordero Pérez
 
@@ -14,7 +15,14 @@ class subinfo(info.infoclass):
         self.defaultTarget = "1.5.1"
 
     def setDependencies(self):
-        # self.buildDependencies["virtual/base"] = None
+        self.buildDependencies["virtual/base"] = None
+        self.buildDependencies["libs/qt5/qtx11extras"] = None
         self.runtimeDependencies["libs/qt5/qtbase"] = None
         self.runtimeDependencies["libs/qt5/qtx11extras"] = None
         # if CraftCore.compiler.isWindows:
+
+from Package.Qt5CorePackageBase import *
+
+class Package(CMakePackageBase):
+    def __init__(self):
+        CMakePackageBase.__init__(self)

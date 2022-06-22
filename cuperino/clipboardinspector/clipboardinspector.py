@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 # SPDX-License-Identifier: GPL-3.0-or-later
-# SPDX-FileCopyrightText: 2021 Javier O. Cordero Pérez
+# SPDX-FileCopyrightText: 2021-2022 Javier O. Cordero Pérez
 
 import info
 

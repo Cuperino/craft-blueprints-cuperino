@@ -1,5 +1,6 @@
-# SPDX-License-Identifier: GPL-3.0-or-later
-# SPDX-FileCopyrightText: 2021 Javier O. Cordero Pérez
+# -*- coding: utf-8 -*-
+# SPDX-License-Identifier: GPL-3.0
+# SPDX-FileCopyrightText: 2021-2022 Javier O. Cordero Pérez
 
 import info
 
@@ -22,6 +23,7 @@ class subinfo(info.infoclass):
             self.buildDependencies["dev-utils/nsis"] = None
         self.buildDependencies["kde/frameworks/extra-cmake-modules"] = None
         self.buildDependencies["cuperino/qhotkey"] = None
+        self.runtimeDependencies["cuperino/qhotkey"] = None
         self.runtimeDependencies["libs/qt5/qtsvg"] = None
         self.runtimeDependencies["libs/qt5/qtbase"] = None
         self.runtimeDependencies["libs/qt5/qtdeclarative"] = None
