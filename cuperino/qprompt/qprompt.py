@@ -22,8 +22,6 @@ class subinfo(info.infoclass):
         elif CraftCore.compiler.isWindows:
             self.buildDependencies["dev-utils/nsis"] = None
         self.buildDependencies["kde/frameworks/extra-cmake-modules"] = None
-        self.buildDependencies["cuperino/qhotkey"] = None
-        self.runtimeDependencies["cuperino/qhotkey"] = None
         self.runtimeDependencies["libs/qt5/qtsvg"] = None
         self.runtimeDependencies["libs/qt5/qtbase"] = None
         self.runtimeDependencies["libs/qt5/qtdeclarative"] = None
