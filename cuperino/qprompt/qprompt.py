@@ -10,7 +10,7 @@ class subinfo(info.infoclass):
         self.displayName = "QPrompt"
         self.description = "Teleprompter software for all video creators"
         self.webpage = "https://qprompt.app"
-        for ver in ["v1.0", "ubuntu-18-AppImage", "main"]:
+        for ver in ["v1.0", "main"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
         self.defaultTarget = "main"
 
@@ -22,16 +22,16 @@ class subinfo(info.infoclass):
         elif CraftCore.compiler.isWindows:
             self.buildDependencies["dev-utils/nsis"] = None
         self.buildDependencies["kde/frameworks/extra-cmake-modules"] = None
-        self.runtimeDependencies["libs/qt5/qtsvg"] = None
-        self.runtimeDependencies["libs/qt5/qtbase"] = None
-        self.runtimeDependencies["libs/qt5/qtdeclarative"] = None
+        self.runtimeDependencies["libs/qt5/qtsvg"] = "libs/qt5"
+        self.runtimeDependencies["libs/qt5/qtbase"] = "libs/qt5"
+        self.runtimeDependencies["libs/qt5/qtdeclarative"] = "libs/qt5"
         if CraftCore.compiler.isAndroid:
-            self.runtimeDependencies["libs/qt5/qtandroidextras"] = None
+            self.runtimeDependencies["libs/qt5/qtandroidextras"] = "libs/qt5"
         else:
             self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
             self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None 
-        self.runtimeDependencies["libs/qt5/qtquickcontrols"] = None
-        self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = None
+        self.runtimeDependencies["libs/qt5/qtquickcontrols"] = "libs/qt5"
+        self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = "libs/qt5"
         self.runtimeDependencies["kde/frameworks/tier1/kcoreaddons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
