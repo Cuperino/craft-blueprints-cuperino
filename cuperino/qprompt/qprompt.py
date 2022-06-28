@@ -22,16 +22,16 @@ class subinfo(info.infoclass):
         elif CraftCore.compiler.isWindows:
             self.buildDependencies["dev-utils/nsis"] = None
         self.buildDependencies["kde/frameworks/extra-cmake-modules"] = None
-        self.runtimeDependencies["libs/qt5/qtsvg"] = "libs/qt5"
-        self.runtimeDependencies["libs/qt5/qtbase"] = "libs/qt5"
-        self.runtimeDependencies["libs/qt5/qtdeclarative"] = "libs/qt5"
+        self.runtimeDependencies["libs/qt5/qtsvg"] = "kde/5.15"
+        self.runtimeDependencies["libs/qt5/qtbase"] = "kde/5.15"
+        self.runtimeDependencies["libs/qt5/qtdeclarative"] = "kde/5.15"
         if CraftCore.compiler.isAndroid:
-            self.runtimeDependencies["libs/qt5/qtandroidextras"] = "libs/qt5"
+            self.runtimeDependencies["libs/qt5/qtandroidextras"] = "kde/5.15"
         else:
             self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
             self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None 
-        self.runtimeDependencies["libs/qt5/qtquickcontrols"] = "libs/qt5"
-        self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = "libs/qt5"
+        self.runtimeDependencies["libs/qt5/qtquickcontrols"] = "kde/5.15"
+        self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = "kde/5.15"
         self.runtimeDependencies["kde/frameworks/tier1/kcoreaddons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
