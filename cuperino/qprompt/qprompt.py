@@ -16,6 +16,8 @@ class subinfo(info.infoclass):
 
     def setDependencies(self):
         self.buildDependencies["virtual/base"] = None
+        self.buildDependencies["cuperino/qhotkey"] = None
+        self.runtimeDependencies["cuperino/qhotkey"] = None
         if CraftCore.compiler.isLinux:
             self.buildDependencies["dev-utils/linuxdeploy"] = None
             self.buildDependencies["dev-utils/appimagetool"] = None
