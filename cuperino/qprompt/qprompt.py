@@ -21,6 +21,7 @@ class subinfo(info.infoclass):
         if CraftCore.compiler.isLinux:
             self.buildDependencies["dev-utils/linuxdeploy"] = None
             self.buildDependencies["dev-utils/appimagetool"] = None
+            self.buildDependencies["libs/qt5/qtx11extras"] = "kde/5.15"
         elif CraftCore.compiler.isWindows:
             self.buildDependencies["dev-utils/nsis"] = None
         self.buildDependencies["kde/frameworks/extra-cmake-modules"] = None
