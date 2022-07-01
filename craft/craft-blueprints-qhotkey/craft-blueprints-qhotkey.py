@@ -3,9 +3,9 @@ import info
 
 class subinfo(info.infoclass):
     def setTargets(self):
-        for ver in ["1.5.1", "1.5.0", "master"]:
+        for ver in ["v1.5.2", "master"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QHotkey.git|{ver}|"
-        self.defaultTarget = "master"
+        self.defaultTarget = "v1.5.2"
 
     def setDependencies(self):
         self.buildDependencies["craft/craft-core"] = "default"
