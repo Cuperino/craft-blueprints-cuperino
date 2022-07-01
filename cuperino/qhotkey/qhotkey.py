@@ -10,9 +10,9 @@ class subinfo(info.infoclass):
         self.displayName = "QHotkey"
         self.description = "Global shortcut/hotkey for Desktop Qt-Applications"
         self.webpage = "https://skycoder42.github.io/QHotkey/"
-        for ver in ["v1.5.2", "master"]:
+        for ver in ["1.5.2", "master"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QHotkey.git|{ver}|"
-        self.defaultTarget = "v1.5.2"
+        self.defaultTarget = "1.5.2"
 
     def setDependencies(self):
         self.buildDependencies["virtual/base"] = None
