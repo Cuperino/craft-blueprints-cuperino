@@ -19,6 +19,7 @@ class subinfo(info.infoclass):
         self.buildDependencies["cuperino/qhotkey"] = None
         self.runtimeDependencies["cuperino/qhotkey"] = None
         if CraftCore.compiler.isLinux:
+            self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
             self.buildDependencies["dev-utils/linuxdeploy"] = None
             self.buildDependencies["dev-utils/appimagetool"] = None
             self.buildDependencies["libs/qt5/qtx11extras"] = "kde/5.15"
@@ -30,15 +31,14 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtdeclarative"] = "kde/5.15"
         if CraftCore.compiler.isAndroid:
             self.runtimeDependencies["libs/qt5/qtandroidextras"] = "kde/5.15"
-        else:
-            self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
-            self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None 
+        # else:
+        #     self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None 
         self.runtimeDependencies["libs/qt5/qtquickcontrols"] = "kde/5.15"
         self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = "kde/5.15"
         self.runtimeDependencies["kde/frameworks/tier1/kcoreaddons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
-        self.runtimeDependencies["kde/frameworks/tier1/kcrash"] = None
+        self.runtimeDependencies["kde/frameworks/tier2/kcrash"] = None
 
 from Package.CMakePackageBase import *
 
