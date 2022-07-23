@@ -19,7 +19,6 @@ class subinfo(info.infoclass):
         self.buildDependencies["cuperino/qhotkey"] = None
         self.runtimeDependencies["cuperino/qhotkey"] = None
         if CraftCore.compiler.isLinux:
-            self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None
             self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
             self.buildDependencies["dev-utils/linuxdeploy"] = None
             self.buildDependencies["dev-utils/appimagetool"] = None
