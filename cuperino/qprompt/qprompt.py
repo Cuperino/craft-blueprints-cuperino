@@ -10,7 +10,7 @@ class subinfo(info.infoclass):
         self.displayName = "QPrompt"
         self.description = "Teleprompter software for all video creators"
         self.webpage = "https://qprompt.app"
-        for ver in ["v1.0", "main"]:
+        for ver in ["v1.1", "v1.0", "main"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
         self.defaultTarget = "main"
 
@@ -31,12 +31,13 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtdeclarative"] = "kde/5.15"
         if CraftCore.compiler.isAndroid:
             self.runtimeDependencies["libs/qt5/qtandroidextras"] = "kde/5.15"
+        else:
+            self.runtimeDependencies["kde/frameworks/tier2/kcrash"] = None
         self.runtimeDependencies["libs/qt5/qtquickcontrols"] = "kde/5.15"
         self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = "kde/5.15"
         self.runtimeDependencies["kde/frameworks/tier1/kcoreaddons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/ki18n"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
-        self.runtimeDependencies["kde/frameworks/tier2/kcrash"] = None
 
 from Package.CMakePackageBase import *
 
@@ -57,7 +58,10 @@ class Package(CMakePackageBase):
         self.defines["website"] = "https://qprompt.app/"
         self.defines["company"] = "Javier O. Cordero Perez"
         self.defines["productname"] = "QPrompt"
-        self.defines["appname"] = "qprompt"
+        if CraftCore.compiler.isMacOS:
+            self.defines["appname"] = "QPrompt"
+        else:
+            self.defines["appname"] = "qprompt"
         self.defines["license"] = os.path.join(self.sourceDir(), "COPYING")
         self.defines["executable"] = r"bin/qprompt.exe"
 
