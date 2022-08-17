@@ -60,7 +60,7 @@ class Package(CMakePackageBase):
         self.defines["license"] = os.path.join(self.sourceDir(), "COPYING")
         self.defines["executable"] = r"bin/clipboardinspector.exe"
 
-        self.defines["icon"] = os.path.join(self.sourceDir(), "src", "icons", "icon.svg")
+        self.defines["icon"] = os.path.join(self.sourceDir(), "src", "icons", "clipboardinspector.ico")
         self.defines["icon_png"] = os.path.join(self.packageDir(), ".assets", "150-apps-com.cuperino.clipboardinspector.png")
         self.defines["icon_png_44"] = os.path.join(self.packageDir(), ".assets", "44-apps-com.cuperino.clipboardinspector.png")
         self.defines["icon_png_310x310"] = os.path.join(self.packageDir(), ".assets", "310-apps-com.cuperino.clipboardinspector.png")
