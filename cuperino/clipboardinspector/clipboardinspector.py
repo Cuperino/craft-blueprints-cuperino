@@ -56,7 +56,6 @@ class Package(CMakePackageBase):
         self.defines["website"] = "https://cuperino.com/"
         self.defines["company"] = "Javier O. Cordero Perez"
         self.defines["productname"] = "Clipboard Inspector"
-        self.defines["appname"] = "clipboardinspector"
         if CraftCore.compiler.isMacOS:
             self.defines["appname"] = "Clipboard Inspector"
         else:
