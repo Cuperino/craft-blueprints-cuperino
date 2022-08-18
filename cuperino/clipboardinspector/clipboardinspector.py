@@ -46,7 +46,7 @@ class Package(CMakePackageBase):
             # Add APPLE_IN_APP_BUNDLE flag to enable private DBus, when packing by Craft
             self.subinfo.options.configure.args += " -DAPPLE_IN_APP_BUNDLE=ON"
         elif CraftCore.compiler.isWindows:
-            self.defines["shortcuts"] = [{"name" : "ClipboardInspector", "target":"bin/clipboardinspector.exe", "description" : "Clipboard inspection app for efficient developers"}]
+            self.defines["shortcuts"] = [{"name" : "Clipboard Inspector", "target":"bin/clipboardinspector.exe", "description" : "Clipboard inspection app for efficient developers"}]
 
     def createPackage(self):
         self.blacklist_file.append(os.path.join(self.packageDir(), "blacklist.txt"))
@@ -57,6 +57,10 @@ class Package(CMakePackageBase):
         self.defines["company"] = "Javier O. Cordero Perez"
         self.defines["productname"] = "Clipboard Inspector"
         self.defines["appname"] = "clipboardinspector"
+        if CraftCore.compiler.isMacOS:
+            self.defines["appname"] = "Clipboard Inspector"
+        else:
+            self.defines["appname"] = "clipboardinspector"
         self.defines["license"] = os.path.join(self.sourceDir(), "COPYING")
         self.defines["executable"] = r"bin/clipboardinspector.exe"
 
