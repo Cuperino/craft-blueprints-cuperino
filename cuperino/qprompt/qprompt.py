@@ -40,6 +40,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
 
 from Package.CMakePackageBase import *
+from Packager.AppxPackager import AppxPackager
 
 class Package(CMakePackageBase):
     def __init__(self):
