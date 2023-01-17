@@ -16,8 +16,6 @@ class subinfo(info.infoclass):
 
     def setDependencies(self):
         self.buildDependencies["virtual/base"] = None
-        self.buildDependencies["cuperino/qhotkey"] = None
-        self.runtimeDependencies["cuperino/qhotkey"] = None
         if CraftCore.compiler.isLinux:
             self.runtimeDependencies["kde/frameworks/tier3/kiconthemes"] = None
             self.buildDependencies["dev-utils/linuxdeploy"] = None
@@ -31,7 +29,9 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtdeclarative"] = "kde/5.15"
         if CraftCore.compiler.isAndroid:
             self.runtimeDependencies["libs/qt5/qtandroidextras"] = "kde/5.15"
-        else:
+        elif not CraftCore.compiler.isFreeBSD:
+            self.buildDependencies["cuperino/qhotkey"] = None
+            self.runtimeDependencies["cuperino/qhotkey"] = None
             self.runtimeDependencies["kde/frameworks/tier2/kcrash"] = None
         self.runtimeDependencies["libs/qt5/qtquickcontrols"] = "kde/5.15"
         self.runtimeDependencies["libs/qt5/qtquickcontrols2"] = "kde/5.15"
