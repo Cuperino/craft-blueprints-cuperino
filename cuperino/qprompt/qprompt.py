@@ -29,7 +29,6 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtdeclarative"] = "kde/5.15"
         if CraftCore.compiler.isAndroid:
             self.runtimeDependencies["libs/qt5/qtandroidextras"] = "kde/5.15"
-            self.runtimeDependencies["libs/qt5/qvirtualkeyboard"] = "kde/5.15"
         elif not CraftCore.compiler.isFreeBSD:
             self.buildDependencies["cuperino/qhotkey"] = None
             self.runtimeDependencies["cuperino/qhotkey"] = None
