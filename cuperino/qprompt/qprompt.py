@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # SPDX-License-Identifier: GPL-3.0
-# SPDX-FileCopyrightText: 2021-2022 Javier O. Cordero Pérez
+# SPDX-FileCopyrightText: 2021-2023 Javier O. Cordero Pérez
 
 import info
 
@@ -10,7 +10,7 @@ class subinfo(info.infoclass):
         self.displayName = "QPrompt"
         self.description = "Teleprompter software for all video creators"
         self.webpage = "https://qprompt.app"
-        for ver in ["v1.1", "v1.0", "main"]:
+        for ver in ["v1.2", "v1.1", "v1.0", "main"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
         self.defaultTarget = "main"
 
