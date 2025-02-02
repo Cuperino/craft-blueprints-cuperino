@@ -1,12 +1,8 @@
-# -*- coding: utf-8 -*-
-# SPDX-License-Identifier: GPL-3.0-or-later
-# SPDX-FileCopyrightText: 2021-2022 Javier O. Cordero Pérez
-
 import info
+
 
 class subinfo(info.infoclass):
     def setTargets(self):
-        #self.versionInfo.setDefaultValues()
         self.displayName = "Clipboard Inspector"
         self.description = "Native clipboard inspection app for efficient developers"
         self.webpage = "https://cuperino.com"
@@ -37,12 +33,14 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier1/kirigami"] = None
         self.runtimeDependencies["kde/frameworks/tier1/syntax-highlighting"] = None
 
+
 from Package.CMakePackageBase import *
 from Packager.AppxPackager import AppxPackager
 
+
 class Package(CMakePackageBase):
-    def __init__(self):
-        CMakePackageBase.__init__(self)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         if CraftCore.compiler.isMacOS:
             # Add APPLE_IN_APP_BUNDLE flag to enable private DBus, when packing by Craft
             self.subinfo.options.configure.args += " -DAPPLE_IN_APP_BUNDLE=ON"

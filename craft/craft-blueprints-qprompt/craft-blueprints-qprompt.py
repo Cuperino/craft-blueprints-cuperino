@@ -3,9 +3,9 @@ import info
 
 class subinfo(info.infoclass):
     def setTargets(self):
-        for ver in ["v1.2", "v1.1", "v1.0", "main"]:
+        for ver in ["v2.0", "main"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QPrompt.git|{ver}|"
-        self.defaultTarget = "main"
+        self.defaultTarget = "v2.0"
 
     def setDependencies(self):
         self.buildDependencies["craft/craft-core"] = "default"
@@ -15,8 +15,8 @@ from Package.SourceOnlyPackageBase import *
 
 
 class Package(SourceOnlyPackageBase):
-    def __init__(self):
-        SourceOnlyPackageBase.__init__(self)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.subinfo.options.package.disableBinaryCache = True
         self.subinfo.options.dailyUpdate = True
 

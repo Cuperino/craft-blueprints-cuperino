@@ -3,9 +3,9 @@ import info
 
 class subinfo(info.infoclass):
     def setTargets(self):
-        for ver in ["1.5.2", "master"]:
+        for ver in ["master"]:
             self.svnTargets[ver] = f"[git]https://github.com/Cuperino/QHotkey.git|{ver}|"
-        self.defaultTarget = "1.5.2"
+        self.defaultTarget = "master"
 
     def setDependencies(self):
         self.buildDependencies["craft/craft-core"] = "default"
@@ -15,8 +15,8 @@ from Package.SourceOnlyPackageBase import *
 
 
 class Package(SourceOnlyPackageBase):
-    def __init__(self):
-        SourceOnlyPackageBase.__init__(self)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.subinfo.options.package.disableBinaryCache = True
         self.subinfo.options.dailyUpdate = True
 
